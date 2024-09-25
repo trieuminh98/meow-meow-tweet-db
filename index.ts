@@ -4,6 +4,7 @@ import * as codeSchema from './schemas/code';
 import * as fileSchema from './schemas/file';
 import * as productSchema from './schemas/product';
 
+//Comment
 const client = postgres(process.env.DATABASE_URL ?? '');
 const db = drizzle(client, {
   schema: {
