@@ -15,6 +15,13 @@
       "when": 1728017812094,
       "tag": "0001_dapper_juggernaut",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1728900349244,
+      "tag": "0002_magenta_captain_cross",
+      "breakpoints": true
     }
   ]
 }

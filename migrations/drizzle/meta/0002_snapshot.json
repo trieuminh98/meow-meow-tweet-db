@@ -1,6 +1,6 @@
 {
-  "id": "7207c8cf-5643-4cb5-955f-46f111fa8a43",
-  "prevId": "e2a8974b-5c81-4f56-8349-0fb44c343afd",
+  "id": "40d5ad31-64ae-4bbf-a7e5-1a5f4777c122",
+  "prevId": "7207c8cf-5643-4cb5-955f-46f111fa8a43",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -120,8 +120,12 @@
           "name": "files_product_id_products_id_fk",
           "tableFrom": "files",
           "tableTo": "products",
-          "columnsFrom": ["product_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "product_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -141,10 +145,17 @@
         },
         "slider": {
           "name": "slider",
-          "type": "json",
+          "type": "jsonb",
           "primaryKey": false,
           "notNull": false,
-          "default": "'{\"title\":\"\",\"images\":[]}'::json"
+          "default": "'{\"title\":\"\",\"images\":[]}'::jsonb"
+        },
+        "marqueeInfos": {
+          "name": "marqueeInfos",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
         }
       },
       "indexes": {},
@@ -254,7 +265,10 @@
     "public.type": {
       "name": "type",
       "schema": "public",
-      "values": ["scents", "sizes"]
+      "values": [
+        "scents",
+        "sizes"
+      ]
     }
   },
   "schemas": {},
