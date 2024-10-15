@@ -1,5 +1,5 @@
-import { jsonb, pgTable, serial } from 'drizzle-orm/pg-core';
-import { SelectFile } from './file';
+import { jsonb, pgTable, serial } from 'drizzle-orm/pg-core'
+import { SelectFile } from './file'
 
 export const metadataTable = pgTable('metadatas', {
   id: serial('id').primaryKey().notNull(),
@@ -8,16 +8,17 @@ export const metadataTable = pgTable('metadatas', {
     images: []
   }),
   marqueeInfos: jsonb('marqueeInfos').$type<MarqueeInfos[]>().default([])
-});
+})
 
-export type InsertMetadata = typeof metadataTable.$inferInsert;
-export type SelectMetadata = typeof metadataTable.$inferSelect;
+export type InsertMetadata = typeof metadataTable.$inferInsert
+export type SelectMetadata = typeof metadataTable.$inferSelect
 export type Slider = {
-  title: string;
-  images: SelectFile[];
-};
+  title: string
+  images: SelectFile[]
+}
 
 export type MarqueeInfos = {
-  text: string;
-  link?: string;
-};
+  text: string
+  link?: string
+  linkDescription?: string
+}
