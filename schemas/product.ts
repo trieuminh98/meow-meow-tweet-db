@@ -1,13 +1,6 @@
-import { relations } from 'drizzle-orm';
-import {
-  integer,
-  json,
-  pgTable,
-  serial,
-  text,
-  timestamp
-} from 'drizzle-orm/pg-core';
-import { filesTable, SelectFile } from './file';
+import { relations } from 'drizzle-orm'
+import { integer, json, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
+import { filesTable, SelectFile } from './file'
 
 //Product Table
 export const productsTable = pgTable('products', {
@@ -24,22 +17,20 @@ export const productsTable = pgTable('products', {
   overviewDescriptionContent: text('overview_description_content'),
   createdAt: timestamp('created_at', { mode: 'string' }).defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { mode: 'string' }).defaultNow().notNull(),
-  additionalDescriptions: json('additional_descriptions')
-    .$type<AdditionalDescriptions[]>()
-    .default([])
-});
+  additionalDescriptions: json('additional_descriptions').$type<AdditionalDescriptions[]>().default([])
+})
 
 export const productRelations = relations(productsTable, ({ many }) => ({
   images: many(filesTable)
-}));
+}))
 
-export type InsertProduct = typeof productsTable.$inferInsert;
-export type SelectProduct = typeof productsTable.$inferSelect;
+export type InsertProduct = typeof productsTable.$inferInsert
+export type SelectProduct = typeof productsTable.$inferSelect
 export type Product = SelectProduct & {
-  images: SelectFile[];
-};
+  images: SelectFile[]
+}
 export type AdditionalDescriptions = {
-  image: SelectFile[];
-  title: string;
-  description: string;
-};
+  image: SelectFile[]
+  title: string
+  description: string
+}

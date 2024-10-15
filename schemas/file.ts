@@ -1,6 +1,6 @@
-import { relations } from 'drizzle-orm';
-import { integer, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
-import { productsTable } from './product';
+import { relations } from 'drizzle-orm'
+import { integer, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
+import { productsTable } from './product'
 
 export const filesTable = pgTable('files', {
   id: serial('id').primaryKey().notNull(),
@@ -13,14 +13,14 @@ export const filesTable = pgTable('files', {
   updatedAt: timestamp('updated_at', { mode: 'string' }).defaultNow().notNull(),
   type: text('type').notNull(),
   productId: integer('product_id').references(() => productsTable.id)
-});
+})
 
 export const fileRelations = relations(filesTable, ({ one }) => ({
   product: one(productsTable, {
     fields: [filesTable.productId],
     references: [productsTable.id]
   })
-}));
+}))
 
-export type InsertFile = typeof filesTable.$inferInsert;
-export type SelectFile = typeof filesTable.$inferSelect;
+export type InsertFile = typeof filesTable.$inferInsert
+export type SelectFile = typeof filesTable.$inferSelect

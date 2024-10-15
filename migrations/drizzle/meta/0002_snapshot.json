@@ -120,12 +120,8 @@
           "name": "files_product_id_products_id_fk",
           "tableFrom": "files",
           "tableTo": "products",
-          "columnsFrom": [
-            "product_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["product_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -265,10 +261,7 @@
     "public.type": {
       "name": "type",
       "schema": "public",
-      "values": [
-        "scents",
-        "sizes"
-      ]
+      "values": ["scents", "sizes"]
     }
   },
   "schemas": {},
