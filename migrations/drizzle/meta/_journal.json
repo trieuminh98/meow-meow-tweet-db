@@ -22,6 +22,20 @@
       "when": 1728900349244,
       "tag": "0002_magenta_captain_cross",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1729052902970,
+      "tag": "0003_mute_the_professor",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1729054293159,
+      "tag": "0004_lowly_nicolaos",
+      "breakpoints": true
     }
   ]
 }

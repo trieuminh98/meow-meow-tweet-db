@@ -7,7 +7,8 @@ export const metadataTable = pgTable('metadatas', {
     title: '',
     images: []
   }),
-  marqueeInfos: jsonb('marqueeInfos').$type<MarqueeInfos[]>().default([])
+  marqueeInfos: jsonb('marquee_infos').$type<MarqueeInfos[]>().default([]),
+  video: jsonb('video').$type<SelectFile>()
 })
 
 export type InsertMetadata = typeof metadataTable.$inferInsert

@@ -20,7 +20,7 @@ export const productsTable = pgTable('products', {
   additionalDescriptions: json('additional_descriptions').$type<AdditionalDescriptions[]>().default([])
 })
 
-export const productRelations = relations(productsTable, ({ many }) => ({
+export const productRelations = relations(productsTable, ({ many, one }) => ({
   images: many(filesTable)
 }))
 

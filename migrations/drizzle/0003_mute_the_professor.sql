@@ -1,0 +1,1 @@
+ALTER TABLE "metadatas" ALTER COLUMN "marqueeInfos" DROP DEFAULT;
