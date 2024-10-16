@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm'
 import db from '..'
-import { CODE_TYPE, codeTable, InsertCode } from '../schemas/code'
+import { type CODE_TYPE, codeTable, type InsertCode } from '../schemas/code'
 
 export const insertCode = async (code: InsertCode) => {
   const data = await db.insert(codeTable).values(code).returning()

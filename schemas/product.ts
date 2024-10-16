@@ -1,6 +1,6 @@
 import { relations } from 'drizzle-orm'
 import { integer, json, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
-import { filesTable, SelectFile } from './file'
+import { filesTable, type SelectFile } from './file'
 
 //Product Table
 export const productsTable = pgTable('products', {
@@ -20,7 +20,7 @@ export const productsTable = pgTable('products', {
   additionalDescriptions: json('additional_descriptions').$type<AdditionalDescriptions[]>().default([])
 })
 
-export const productRelations = relations(productsTable, ({ many, one }) => ({
+export const productRelations = relations(productsTable, ({ many }) => ({
   images: many(filesTable)
 }))
 

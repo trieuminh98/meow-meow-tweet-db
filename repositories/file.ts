@@ -2,7 +2,7 @@
 //comnet
 import { eq, inArray } from 'drizzle-orm'
 import db from '..'
-import { InsertFile, filesTable } from '../schemas/file'
+import { type InsertFile, filesTable } from '../schemas/file'
 
 export const insertFile = async (file: InsertFile) => {
   const data = await db.insert(filesTable).values(file).returning()

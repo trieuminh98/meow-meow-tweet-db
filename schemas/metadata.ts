@@ -1,5 +1,5 @@
 import { jsonb, pgTable, serial } from 'drizzle-orm/pg-core'
-import { SelectFile } from './file'
+import { type SelectFile } from './file'
 
 export const metadataTable = pgTable('metadatas', {
   id: serial('id').primaryKey().notNull(),

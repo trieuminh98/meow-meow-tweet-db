@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm'
 import db from '..'
-import { InsertMetadata, metadataTable } from '../schemas/metadata'
+import { type InsertMetadata, metadataTable } from '../schemas/metadata'
 
 export const queryFirstMetadata = async () => {
   const result = await db.query.metadataTable.findFirst()

@@ -1,7 +1,7 @@
 'use server'
 import { eq } from 'drizzle-orm'
 import db from '..'
-import { InsertProduct, productsTable } from '../schemas/product'
+import { type InsertProduct, productsTable } from '../schemas/product'
 
 export const insertProduct = async (product: InsertProduct) => {
   const data = await db.insert(productsTable).values(product).returning()
